@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* AIQC 设计系统 —— 深色科技风（需求 §3）：深空蓝底 + 科技蓝/青色渐变光效 */
+@theme {
+  --color-abyss: #050a14;
+  --color-panel: #0a1220;
+  --color-panel-2: #0d1830;
+  --color-line: rgba(120, 180, 255, 0.14);
+  --color-cyber: #00d4ff;
+  --color-royal: #4f8cff;
+  --color-mint: #2ee6a8;
+  --font-display: var(--font-space), var(--font-inter), "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: var(--font-inter), "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-arabic: var(--font-tajawal), var(--font-inter), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-abyss);
+  color: #e8f1ff;
+  font-family: var(--font-body);
+}
+
+[lang="ar"] body,
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+/* 渐变文字 / 光晕按钮 / 网格背景等科技风工具类 */
+.text-gradient {
+  background: linear-gradient(92deg, #00d4ff 0%, #4f8cff 55%, #2ee6a8 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(79, 140, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 140, 255, 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.card-glow {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.card-glow:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 212, 255, 0.45);
+  box-shadow: 0 18px 50px -18px rgba(0, 212, 255, 0.35);
+}
+
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-flow 8s ease infinite;
+}
+
+/* 巨型描边背景字 */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(120, 180, 255, 0.22);
+  color: transparent;
+}
+/* 无缝滚动字带 */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+[dir="rtl"] .animate-marquee {
+  animation-direction: reverse;
+}
+/* 雷达扫描旋转 */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+/* 上下浮动（HUD 悬浮卡） */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float-y 5s ease-in-out infinite;
+}
+/* 扫描线 */
+@keyframes scan-y {
+  0% { top: -10%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { top: 110%; opacity: 0; }
+}
+.animate-scan {
+  animation: scan-y 5.5s ease-in-out infinite;
+}
+/* 玻璃拟态面板 */
+.glass {
+  background: rgba(13, 24, 48, 0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(120, 180, 255, 0.18);
+}
+
+/* 富文本正文排版（新闻/产品/案例详情，后台 Tiptap 产出 HTML） */
+.rich-content { line-height: 1.9; color: #c9d9f2; }
+.rich-content h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 1.6em 0 0.6em; }
+.rich-content h3 { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 1.4em 0 0.5em; }
+.rich-content p { margin: 0.8em 0; }
+.rich-content ul { list-style: disc; padding-inline-start: 1.4em; margin: 0.8em 0; }
+.rich-content ol { list-style: decimal; padding-inline-start: 1.4em; margin: 0.8em 0; }
+.rich-content blockquote { border-inline-start: 3px solid #00d4ff; padding-inline-start: 1em; color: #9fb8dd; margin: 1em 0; }
+.rich-content img { border-radius: 0.75rem; margin: 1em auto; max-width: 100%; }
+.rich-content a { color: #00d4ff; text-decoration: underline; }
+
+/* 移动端动效降级（需求 §3.2） */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient { animation: none; }
+  html { scroll-behavior: auto; }
 }

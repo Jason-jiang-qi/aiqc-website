@@ -1,0 +1,48 @@
+{
+  "nav": { "home": "Home", "about": "About Us", "products": "Products", "cases": "Cases", "news": "News", "contact": "Contact", "admin": "Admin" },
+  "common": {
+    "viewAll": "View All", "viewDetails": "View Details", "back": "Back", "prevPage": "Previous", "nextPage": "Next",
+    "prevArticle": "Previous Article", "nextArticle": "Next Article", "noContent": "No content yet", "featured": "Featured",
+    "consultNow": "Contact Us", "consultProduct": "Ask About This Product", "features": "Key Features", "specs": "Specifications",
+    "scenarios": "Use Cases", "gallery": "Gallery", "results": "Results", "client": "Client / Industry"
+  },
+  "hero": {
+    "badge": "100% Saudi Local Company · 4 Years",
+    "title": "Smart Devices,",
+    "titleAccent": "Driving Saudi's Future",
+    "subtitle": "AIQC is a Saudi local smart-device sales and operations provider, bringing cutting-edge autonomous and robotics equipment to Saudi Arabia with one-stop sales, deployment, operations and maintenance.",
+    "ctaProducts": "Explore Products", "ctaContact": "Contact Us",
+    "scroll": "Scroll to Explore", "hudStatus": "System Online · Serving Saudi Arabia",
+    "chip1": "L4 Autonomy", "chip2": "24/7 Unmanned Ops", "chip3": "Local Rapid Response",
+    "showcaseLabel": "Flagship Lineup"
+  },
+  "home": {
+    "aboutTitle": "Your Smart-Device Partner in Saudi Arabia",
+    "aboutText": "AIQC is a 100% Saudi local company with 4 years in smart devices. We bring world-leading autonomous and robotics equipment to Saudi Arabia, and our local team delivers sales, deployment and long-term operations so devices create real value.",
+    "businessTitle": "What We Do",
+    "biz1Title": "Smart Device Sales", "biz1Desc": "Autonomous and robotics equipment for governments, parks, enterprises, property and logistics clients — selection, delivery and training included.",
+    "biz2Title": "Operations Services", "biz2Desc": "Local deployment, commissioning, daily operations, maintenance and technical training across the full lifecycle.",
+    "statsYears": "Years Local", "statsClients": "Clients Served", "statsDevices": "Devices Operated", "statsCities": "Cities Covered",
+    "productsTitle": "Products", "casesTitle": "Success Cases", "newsTitle": "Latest News",
+    "ctaTitle": "Ready to boost efficiency with smart devices?", "ctaText": "Tell us your scenario — our local team will reach out within one business day."
+  },
+  "about": {
+    "title": "About Us", "introTitle": "Who We Are",
+    "intro": "AIQC is a 100% Saudi local company, focused on smart devices for 4 years. We bring cutting-edge autonomous and robotics equipment to Saudi Arabia, providing B2B clients in government, parks, enterprise, property and logistics with one-stop services from sales and delivery to deployment and long-term operations.",
+    "missionTitle": "Mission", "mission": "Keep smart devices running reliably across Saudi parks, roads and sites, cutting costs and lifting efficiency for our clients.",
+    "visionTitle": "Vision", "vision": "To be the Gulf region's most trusted smart-device sales and operations provider.",
+    "valuesTitle": "Core Values", "v1": "Local: Saudi-registered, local team, fast local response", "v2": "One-stop: sales + operations + maintenance, end to end", "v3": "Long-term: supporting the full device lifecycle",
+    "localTitle": "Local Capabilities", "localText": "On-site local service teams, rapid support response, localized commissioning and training to keep devices running reliably in Saudi conditions. Honors and partnerships to be added."
+  },
+  "products": { "title": "Products", "subtitle": "Autonomous and robotics equipment for parks, roads, logistics and sites" },
+  "cases": { "title": "Success Cases", "subtitle": "Real deployments — see how smart devices create value" },
+  "news": { "title": "News", "subtitle": "Company updates and industry insights" },
+  "contact": {
+    "title": "Contact Us", "subtitle": "Leave a message and our team will get back to you soon",
+    "name": "Name", "contactLabel": "Phone or Email", "company": "Company (optional)",
+    "product": "Product of Interest", "productNone": "Not sure yet", "content": "Message",
+    "submit": "Send Message", "submitting": "Sending…", "success": "Message sent! We'll contact you soon.",
+    "failed": "Failed to send, please try again later", "infoTitle": "Contact Info", "phone": "Phone", "email": "Email", "address": "Office Address"
+  },
+  "footer": { "rights": "All rights reserved", "tagline": "Saudi smart-device sales & operations provider", "quickLinks": "Quick Links", "contactUs": "Contact", "follow": "Language" }
+}

@@ -1,0 +1,112 @@
+// AIQC 官网数据模型（需求文档 v2.0 §9）—— MySQL 8.x
+// 与其他项目共用同一 MySQL 实例，AIQC 使用独立逻辑库 `aiqc`（见 .env），表只建在本库内。
+// 三语内容采用 zh/en/ar 分列存储（后台三语分栏填写）；结构化数据（多图/参数/特性）用 Json 列。
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL") // mysql://<user>:<pass>@<host>:3306/aiqc
+}
+
+/// 后台管理员（密码 bcrypt 加密存储）
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String // bcrypt hash
+  name      String   @default("Admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// 产品（无人扫地车/送货车/卡车/机器狗/机器人/无人充电车…）
+model Product {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  cover       String?  @db.VarChar(500)
+  images      Json? // 多图 URL 数组 string[]
+  isPublished Boolean  @default(false)
+  featured    Boolean  @default(false) // 首页主推
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  // 三语标题/简介/详情（详情为富文本 HTML）
+  zhTitle String
+  enTitle String
+  arTitle String
+  zhDesc  String? @db.Text
+  enDesc  String? @db.Text
+  arDesc  String? @db.Text
+  zhBody  String? @db.LongText
+  enBody  String? @db.LongText
+  arBody  String? @db.LongText
+  // 功能特性 [{ "icon": "Zap", "text": {"zh":"","en":"","ar":""} }]
+  features Json?
+  // 技术参数 [{ "label": {"zh":"","en":"","ar":""}, "value": {"zh":"","en":"","ar":""} }]
+  specs Json?
+  // 应用场景三语列表 [{ "zh":"","en":"","ar":"" }]
+  scenarios Json?
+}
+
+/// 新闻动态
+model News {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  cover       String?  @db.VarChar(500)
+  isPublished Boolean  @default(false)
+  publishDate DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  zhTitle   String
+  enTitle   String
+  arTitle   String
+  zhSummary String? @db.Text
+  enSummary String? @db.Text
+  arSummary String? @db.Text
+  zhBody    String? @db.LongText // 富文本 HTML
+  enBody    String? @db.LongText
+  arBody    String? @db.LongText
+}
+
+/// 成功案例
+model Case {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  cover        String?  @db.VarChar(500)
+  images       Json? // 现场图 URL 数组
+  isPublished  Boolean  @default(false)
+  featured     Boolean  @default(false) // 首页精选
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  zhTitle String
+  enTitle String
+  arTitle String
+  // 客户/行业（三语）
+  zhClient String?
+  enClient String?
+  arClient String?
+  zhDesc   String? @db.Text
+  enDesc   String? @db.Text
+  arDesc   String? @db.Text
+  // 详情：背景 → 方案（富文本 HTML，三语）
+  zhBody String? @db.LongText
+  enBody String? @db.LongText
+  arBody String? @db.LongText
+  // 成果数据 [{ "label": {"zh":"","en":"","ar":""}, "value": "30%" }]
+  metrics Json?
+}
+
+/// 客户留言
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  contact   String // 电话或邮箱
+  company   String?
+  product   String? // 意向产品 slug
+  content   String   @db.Text
+  isHandled Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

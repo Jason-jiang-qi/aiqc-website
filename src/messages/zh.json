@@ -1,0 +1,48 @@
+{
+  "nav": { "home": "首页", "about": "关于我们", "products": "产品中心", "cases": "成功案例", "news": "新闻动态", "contact": "联系我们", "admin": "管理后台" },
+  "common": {
+    "viewAll": "查看全部", "viewDetails": "查看详情", "back": "返回", "prevPage": "上一页", "nextPage": "下一页",
+    "prevArticle": "上一篇", "nextArticle": "下一篇", "noContent": "暂无内容", "featured": "主推产品",
+    "consultNow": "立即咨询", "consultProduct": "咨询此产品", "features": "功能特性", "specs": "技术参数",
+    "scenarios": "应用场景", "gallery": "产品图库", "results": "成果数据", "client": "客户 / 行业"
+  },
+  "hero": {
+    "badge": "100% 沙特本地公司 · 成立 4 年",
+    "title": "智能设备，",
+    "titleAccent": "驱动沙特未来",
+    "subtitle": "AIQC 是沙特本地智能设备销售与运营服务商，将前沿自动驾驶与机器人设备引入沙特，提供销售、部署、运营与维护一站式服务。",
+    "ctaProducts": "了解产品", "ctaContact": "联系我们",
+    "scroll": "向下探索", "hudStatus": "系统在线 · 沙特全境服务中",
+    "chip1": "L4 级自动驾驶", "chip2": "7×24 无人运营", "chip3": "本地快速响应",
+    "showcaseLabel": "旗舰产品线"
+  },
+  "home": {
+    "aboutTitle": "扎根沙特的智能设备伙伴",
+    "aboutText": "AIQC 为 100% 沙特本地公司，深耕智能设备领域 4 年。我们把全球前沿的自动驾驶与机器人设备带到沙特，并以本地团队完成销售、交付、部署与长期运营，让智能设备真正落地产生价值。",
+    "businessTitle": "核心业务",
+    "biz1Title": "智能设备销售", "biz1Desc": "面向政府、园区、企业、物业与物流客户，销售无人驾驶与机器人设备，提供选型、交付与培训。",
+    "biz2Title": "运营服务", "biz2Desc": "设备本地化部署、调试、日常运营、维护保养与技术培训，全链条长期陪伴。",
+    "statsYears": "年本地经验", "statsClients": "服务客户", "statsDevices": "运营设备", "statsCities": "覆盖城市",
+    "productsTitle": "产品总览", "casesTitle": "成功案例", "newsTitle": "新闻动态",
+    "ctaTitle": "想让智能设备为您的业务提效？", "ctaText": "告诉我们您的场景，我们的本地团队会在 1 个工作日内与您联系。"
+  },
+  "about": {
+    "title": "关于我们", "introTitle": "公司介绍",
+    "intro": "AIQC 是一家 100% 沙特本地公司，成立 4 年来专注智能设备领域。我们致力于将前沿自动驾驶与机器人设备引入沙特，为政府、园区、企业、物业、物流等 B 端客户提供从销售、交付、部署到长期运营维护的一站式服务。",
+    "missionTitle": "使命", "mission": "让智能设备在沙特每一个园区、道路与场站稳定运行，为客户降本增效。",
+    "visionTitle": "愿景", "vision": "成为海湾地区最值得信赖的智能设备销售与运营服务商。",
+    "valuesTitle": "核心价值", "v1": "本地化：沙特本地注册、本地团队、本地快速响应", "v2": "一站式：销售 + 运营 + 维护全链条服务", "v3": "长期主义：陪伴设备全生命周期运营",
+    "localTitle": "本地化能力", "localText": "本地团队驻地服务、快速响应支持、本地化调试与培训，保障设备在沙特环境下稳定运行。荣誉资质与合作机构后续补充。"
+  },
+  "products": { "title": "产品中心", "subtitle": "自动驾驶与机器人设备，为园区、道路、物流与场站而生" },
+  "cases": { "title": "成功案例", "subtitle": "真实落地项目，看智能设备如何产生价值" },
+  "news": { "title": "新闻动态", "subtitle": "公司动态与行业资讯" },
+  "contact": {
+    "title": "联系我们", "subtitle": "填写留言，我们的团队会尽快与您联系",
+    "name": "姓名", "contactLabel": "联系电话或邮箱", "company": "公司名称（选填）",
+    "product": "意向产品", "productNone": "暂无明确意向", "content": "留言内容",
+    "submit": "提交留言", "submitting": "提交中…", "success": "留言提交成功，我们会尽快与您联系！",
+    "failed": "提交失败，请稍后重试", "infoTitle": "联系信息", "phone": "电话", "email": "邮箱", "address": "办公地址"
+  },
+  "footer": { "rights": "版权所有", "tagline": "沙特智能设备销售与运营服务商", "quickLinks": "快速导航", "contactUs": "联系我们", "follow": "语言" }
+}
